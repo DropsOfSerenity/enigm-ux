@@ -12,6 +12,7 @@
  *
  *= require_tree .
  *= require bootstrap
+ *= require font-awesome
  *= require admin-lte/skins/skin-blue
  *= require admin-lte/AdminLTE
  *= require_self

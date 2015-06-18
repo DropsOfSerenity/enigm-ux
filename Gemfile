@@ -19,6 +19,7 @@ gem 'devise'
 gem 'react-rails', '~> 1.0'
 gem 'activeadmin', '~> 1.0.0.pre1'
 gem 'lodash-rails'
+gem 'font-awesome-rails'
 
 group :development, :test do
   gem 'byebug'
