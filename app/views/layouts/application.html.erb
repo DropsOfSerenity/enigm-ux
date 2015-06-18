@@ -6,9 +6,35 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
-<body>
+<body class="skin-blue sidebar-collapse ">
 
-<%= yield %>
+<div class="wrapper">
 
+  <%= render 'layouts/header' %>
+
+  <!-- Content Wrapper. Contains page content -->
+   <div class="content-wrapper">
+     <!-- Content Header (Page header) -->
+     <section class="content-header">
+       <h1>
+         Hours Estimator
+         <small>Work hour estimations for clients.</small>
+       </h1>
+       <ol class="breadcrumb">
+         <li><a href="#"><i class="fa fa-dashboard"></i> Level</a></li>
+         <li class="active">Here</li>
+       </ol>
+     </section>
+
+     <!-- Main content -->
+     <section class="content">
+
+       <!-- Your Page Content Here -->
+       <%= yield %>
+
+     </section><!-- /.content -->
+   </div><!-- /.content-wrapper -->
+
+</div>
 </body>
 </html>

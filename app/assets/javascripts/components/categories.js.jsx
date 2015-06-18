@@ -3,10 +3,24 @@ var Item = React.createClass({
     this.props.handleItemClick(this.props.item);
   },
   render: function() {
+    var boxClasses = "small-box";
+    boxClasses += this.props.item.selected ? ' bg-red' : ' bg-aqua'
     return (
-      <li onClick={this.handleItemClick}>
-        {this.props.item.selected ? 'selected' : 'notselected'} -- {this.props.item.title}
-      </li>
+
+      <div className="col-lg-3 col-xs-6">
+        <div className={boxClasses}>
+          <div className="inner">
+            <h3>{this.props.item.title}</h3>
+            <p></p>
+          </div>
+          <div className="icon">
+            <i className="fa fa-shopping-cart"></i>
+          </div>
+          <a onClick={this.handleItemClick} href="#" className="small-box-footer">
+            {this.props.item.selected ? 'Remove from estimate.' : 'Add to estimate.'} <i className="fa fa-arrow-circle-right"></i>
+          </a>
+        </div>
+      </div>
     );
   }
 });
@@ -24,9 +38,9 @@ var Category = React.createClass({
     return (
       <div>
         <h1>{this.props.category.title}</h1>
-        <ul>
+        <div className="row">
           {items}
-        </ul>
+        </div>
       </div>
     );
   }

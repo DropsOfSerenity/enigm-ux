@@ -11,5 +11,8 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require bootstrap
+ *= require admin-lte/skins/skin-blue
+ *= require admin-lte/AdminLTE
  *= require_self
  */
