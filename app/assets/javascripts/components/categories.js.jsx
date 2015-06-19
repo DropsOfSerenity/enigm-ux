@@ -104,18 +104,24 @@ var Estimator = React.createClass({
         {items}
 
         <h4>Hours and Price</h4>
-        <div className="info-box bg-yellow">
-          <span className="info-box-icon bg-yellow"><i className="fa fa-clock-o"></i></span>
-          <div className="info-box-content">
-            <span className="info-box-text">Total Hours</span>
-            <span className="info-box-number">{this.calculateTotalHours()}</span>
+        <div className="row">
+          <div className="col-xs-12 col-md-6 col-lg-12">
+            <div className="info-box bg-yellow">
+              <span className="info-box-icon bg-yellow"><i className="fa fa-clock-o"></i></span>
+              <div className="info-box-content">
+                <span className="info-box-text">Total Hours</span>
+                <span className="info-box-number">{this.calculateTotalHours()}</span>
+              </div>
+            </div>
           </div>
-        </div>
-        <div className="info-box bg-green">
-          <span className="info-box-icon bg-green"><i className="fa fa-money"></i></span>
-          <div className="info-box-content">
-            <span className="info-box-text">Estimated Price</span>
-            <span className="info-box-number">${this.calculateTotalPrice()}</span>
+          <div className="col-xs-12 col-md-6 col-lg-12">
+            <div className="info-box bg-green">
+              <span className="info-box-icon bg-green"><i className="fa fa-money"></i></span>
+              <div className="info-box-content">
+                <span className="info-box-text">Estimated Price</span>
+                <span className="info-box-number">${this.calculateTotalPrice()}</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
