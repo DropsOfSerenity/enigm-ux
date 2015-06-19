@@ -170,10 +170,10 @@ var Categories = React.createClass({
     }.bind(this));
     return (
       <div>
-        <div className="col-lg-9">
+        <div className="col-lg-8">
           {cats}
         </div>
-        <div className="col-lg-3">
+        <div className="col-lg-4">
           <div className="box box-primary">
             <div className="box-header with-border">
               <h2 className="box-title">Full Estimate</h2>
