@@ -60,17 +60,17 @@ var EstimatorItem = React.createClass({
   },
   render: function() {
     return (
-      <div className="row">
-        <div className="form-group" style={{margin: "16px 0"}}>
-        <div className="col-xs-3">
-          <p>{this.props.item.title}</p>
-        </div>
-        <div className="col-xs-4">
-          <input className="form-control" placeholder="Hours" ref="hours" type="text" onChange={this.handleChange} value={this.props.item.hours} />
-        </div>
-        <div className="col-xs-5">
-          <input className="form-control" placeholder="Price per hour" ref="price" type="text" onChange={this.handleChange} value={this.props.item.price} />
-        </div>
+      <div className="row" style={{margin: "16px 0"}}>
+        <div className="form-group">
+          <div className="col-xs-3">
+            <p>{this.props.item.title}</p>
+          </div>
+          <div className="col-xs-4">
+            <input className="form-control" placeholder="Hours" ref="hours" type="text" onChange={this.handleChange} value={this.props.item.hours} />
+          </div>
+          <div className="col-xs-5">
+            <input className="form-control" placeholder="Price per hour" ref="price" type="text" onChange={this.handleChange} value={this.props.item.price} />
+          </div>
         </div>
       </div>
     );
@@ -101,27 +101,21 @@ var Estimator = React.createClass({
     }.bind(this));
     return (
       <div>
-        <div className="row">
-          {items}
-        </div>
+        {items}
 
-        <div className="row">
-          <h4>Cost Breakdown</h4>
-          <div className="info-box">
-            <span className="info-box-icon bg-yellow"><i className="fa fa-clock-o"></i></span>
-            <div className="info-box-content">
-              <span className="info-box-text">Total Hours</span>
-              <span className="info-box-number">{this.calculateTotalHours()}</span>
-            </div>
+        <h4>Hours and Price</h4>
+        <div className="info-box bg-yellow">
+          <span className="info-box-icon bg-yellow"><i className="fa fa-clock-o"></i></span>
+          <div className="info-box-content">
+            <span className="info-box-text">Total Hours</span>
+            <span className="info-box-number">{this.calculateTotalHours()}</span>
           </div>
         </div>
-        <div className="row">
-          <div className="info-box">
-            <span className="info-box-icon bg-green"><i className="fa fa-money"></i></span>
-            <div className="info-box-content">
-              <span className="info-box-text">Total Price</span>
-              <span className="info-box-number">${this.calculateTotalPrice()}</span>
-            </div>
+        <div className="info-box bg-green">
+          <span className="info-box-icon bg-green"><i className="fa fa-money"></i></span>
+          <div className="info-box-content">
+            <span className="info-box-text">Estimated Price</span>
+            <span className="info-box-number">${this.calculateTotalPrice()}</span>
           </div>
         </div>
       </div>
@@ -179,9 +173,16 @@ var Categories = React.createClass({
         <div className="col-lg-9">
           {cats}
         </div>
-        <div className="col-lg-3 panel">
-          <h2>Full Estimate</h2>
-          <Estimator updateItem={this.updateItem} items={this.getSelectedItemList()}/>
+        <div className="col-lg-3">
+          <div className="box box-primary">
+            <div className="box-header with-border">
+              <h2 className="box-title">Full Estimate</h2>
+            </div>
+
+            <div className="box-body">
+              <Estimator updateItem={this.updateItem} items={this.getSelectedItemList()}/>
+            </div>
+          </div>
         </div>
       </div>
     );
